@@ -24,7 +24,7 @@ public class Queue {
     @Column(name="creator")
     private String creator;
 
-    @Column(name="status")
+    @Column(name="status",columnDefinition = "varchar(255) default 'open'")
     private String status;
 
     public Long getId() {
@@ -68,14 +68,5 @@ public class Queue {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "Queue{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", createdtime=" + createdtime +
-                ", creator='" + creator + '\'' +
-                ", status='" + status + '\'' +
-                '}';
-    }
+
 }
