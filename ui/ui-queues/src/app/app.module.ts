@@ -6,13 +6,14 @@ import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DetailComponentComponent } from './detail-component/detail-component.component';
-import { PanelViewComponentComponent } from './panel-view-component/panel-view-component.component';
+import { HttpClientModule} from "@angular/common/http";
+import { PanelViewComponent } from './panel-view/panel-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DetailComponentComponent,
-    PanelViewComponentComponent
+    PanelViewComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +22,8 @@ import { PanelViewComponentComponent } from './panel-view-component/panel-view-c
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

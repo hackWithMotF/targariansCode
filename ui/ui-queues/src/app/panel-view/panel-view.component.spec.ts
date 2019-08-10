@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PanelViewComponentComponent } from './panel-view-component.component';
+import { PanelViewComponent } from './panel-view.component';
 
-describe('PanelViewComponentComponent', () => {
-  let component: PanelViewComponentComponent;
-  let fixture: ComponentFixture<PanelViewComponentComponent>;
+describe('PanelViewComponent', () => {
+  let component: PanelViewComponent;
+  let fixture: ComponentFixture<PanelViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PanelViewComponentComponent ]
+      declarations: [ PanelViewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PanelViewComponentComponent);
+    fixture = TestBed.createComponent(PanelViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
