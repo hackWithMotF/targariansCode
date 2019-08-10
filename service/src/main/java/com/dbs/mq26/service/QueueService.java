@@ -7,6 +7,7 @@ import com.dbs.mq26.repository.QueueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +20,7 @@ public class QueueService {
         return queueRepository.findAll();
     }
 
+    @Transactional
     public void deleteQueue(String name){
         Optional<Queue> queueExists = queueRepository.findByName(name);
         if(queueExists.isPresent()){
@@ -28,7 +30,6 @@ public class QueueService {
     }
 
     public Queue createQueue(String name){
-
         Optional<Queue> queueExists = queueRepository.findByName(name);
         if(queueExists.isPresent()){
             System.out.println("=====already present===");
