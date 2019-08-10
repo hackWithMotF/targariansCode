@@ -1,6 +1,7 @@
 package com.dbs.mq26.service;
 
 import com.dbs.mq26.entities.Queue;
+import com.dbs.mq26.exception.MaxQueuesException;
 import com.dbs.mq26.exception.QueueAlreadyExistsException;
 import com.dbs.mq26.repository.QueueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,11 @@ public class QueueService {
             System.out.println("=====already present===");
             throw new QueueAlreadyExistsException("this queue name already exists");
         }
-
+        long maxQueues = queueRepository.count();
+        if(maxQueues>100)
+        {
+        	throw new MaxQueuesException("Max no of queues is 100 and is reached. Please clear queue to create new ones.");
+        }
         Queue queue = new Queue();
         queue.setName(name);
         return queueRepository.save(queue);
