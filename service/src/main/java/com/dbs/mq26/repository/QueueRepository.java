@@ -11,6 +11,6 @@ public interface QueueRepository extends JpaRepository<Queue, Long> {
 
     void deleteByName(String name);
     
-    long count();
+    long  count();
 
 }

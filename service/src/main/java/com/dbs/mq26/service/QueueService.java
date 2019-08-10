@@ -34,7 +34,7 @@ public class QueueService {
             System.out.println("=====already present===");
             throw new QueueAlreadyExistsException("this queue name already exists");
         }
-        long maxQueues = queueRepository.count();
+        long maxQueues  = queueRepository.count();
         if(maxQueues>100)
         {
         	throw new MaxQueuesException("Max no of queues is 100 and is reached. Please clear queue to create new ones.");
