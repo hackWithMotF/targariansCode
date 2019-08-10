@@ -9,4 +9,6 @@ public interface QueueRepository extends JpaRepository<Queue, Long> {
 
     Optional<Queue> findByName(String name);
 
+    void deleteByName(String name);
+
 }

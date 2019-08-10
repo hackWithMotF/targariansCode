@@ -67,4 +67,15 @@ public class Queue {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Queue{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", createdtime=" + createdtime +
+                ", creator='" + creator + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }

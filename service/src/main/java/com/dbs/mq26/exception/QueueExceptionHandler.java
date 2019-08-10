@@ -19,6 +19,6 @@ public class QueueExceptionHandler {
     @ExceptionHandler(QueueAlreadyExistsException.class)
     @ResponseBody
     public ResponseEntity<String> genericHandler(HttpServletRequest request, QueueAlreadyExistsException ex) {
-        return new ResponseEntity<String>(ex.getMessage(), HttpStatus.OK);
+        return new ResponseEntity<String>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

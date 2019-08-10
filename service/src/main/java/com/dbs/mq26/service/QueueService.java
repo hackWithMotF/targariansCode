@@ -18,12 +18,20 @@ public class QueueService {
         return queueRepository.findAll();
     }
 
+    public void deleteQueue(String name){
+        Optional<Queue> queueExists = queueRepository.findByName(name);
+        if(queueExists.isPresent()){
+            queueRepository.deleteByName(name);
+        }
+
+    }
+
     public Queue createQueue(String name){
 
         Optional<Queue> queueExists = queueRepository.findByName(name);
         if(queueExists.isPresent()){
             System.out.println("=====already present===");
-            new QueueAlreadyExistsException("this queue name already exists");
+            throw new QueueAlreadyExistsException("this queue name already exists");
         }
 
         Queue queue = new Queue();
