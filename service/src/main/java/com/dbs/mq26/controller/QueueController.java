@@ -1,19 +1,18 @@
 package com.dbs.mq26.controller;
 
-import com.dbs.mq26.entities.Message;
 import com.dbs.mq26.entities.Queue;
+import com.dbs.mq26.payload.QueueDetails;
 import com.dbs.mq26.service.QueueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.transaction.Transactional;
-import javax.xml.ws.Response;
+import javax.print.attribute.standard.Media;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/api/queue")
@@ -27,8 +26,9 @@ public class QueueController {
         return queueService.getAllQueues();
     }
 
-    @PostMapping("/create")
-    Queue createQueue(@RequestParam("name") String name){
+    @PostMapping(value = "/create",consumes = {MediaType.APPLICATION_JSON_UTF8_VALUE})
+    Queue createQueue(@RequestBody QueueDetails queuePayload){
+        String name = queuePayload.getName();
         Queue queue = queueService.createQueue(name);
         return queue;
     }
@@ -43,6 +43,7 @@ public class QueueController {
 
     /*@GetMapping("/{queueId}/messages")
     List<Message> getQueueMessages(@PathVariable String queueId){
+
         return
     }*/
 }

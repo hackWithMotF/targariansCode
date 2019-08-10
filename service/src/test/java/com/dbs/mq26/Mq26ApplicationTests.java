@@ -28,7 +28,7 @@ public class Mq26ApplicationTests {
 	}
 	@MockBean
 	private QueueService queueService;
-	@Test
+	//@Test
 	public void testGetAllQueues() throws Exception
 	{
 		mvc.perform( MockMvcRequestBuilders
