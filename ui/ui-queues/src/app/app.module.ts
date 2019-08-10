@@ -7,12 +7,9 @@ import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DetailComponentComponent } from './detail-component/detail-component.component';
-<<<<<<< HEAD
-import {RouterModule, Routes} from '@angular/router';
-=======
 import { HttpClientModule} from "@angular/common/http";
 import { PanelViewComponent } from './panel-view/panel-view.component';
->>>>>>> f3878a5a66fa764a5df8b8a30a63929b37d1e931
+import { Routes } from '@angular/router';
 
 const appRoutes: Routes =  [
   {path:'', component: DetailComponentComponent}
@@ -32,11 +29,8 @@ const appRoutes: Routes =  [
     MatPaginatorModule,
     MatSortModule,
     MatProgressSpinnerModule,
-<<<<<<< HEAD
     RouterModule.forRoot(appRoutes)
-=======
     HttpClientModule
->>>>>>> f3878a5a66fa764a5df8b8a30a63929b37d1e931
   ],
   providers: [],
   bootstrap: [AppComponent]
