@@ -51,7 +51,6 @@ public class Queue {
         this.name = name;
     }
 
-
     public String getCreator() {
         return creator;
     }
@@ -68,5 +67,14 @@ public class Queue {
         this.status = status;
     }
 
-
+    @Override
+    public String toString() {
+        return "Queue{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", createdtime=" + createdtime +
+                ", creator='" + creator + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }
